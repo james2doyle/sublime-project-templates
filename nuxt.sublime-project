@@ -1,110 +1,110 @@
 {
-  "folders": [
-    {
-      "file_exclude_patterns": [
-        ".eslintcache",
-        ".gitkeep",
-        "*.min.*",
-        "*.snap",
-        "*.pem",
-        "*lock*"
-      ],
-      "folder_exclude_patterns": [
-        "coverage",
-        ".nuxt",
-        ".output",
-        "dist",
-        "node_modules"
-      ],
-      "path": "."
+    "folders": [
+        {
+            "file_exclude_patterns": [
+                ".eslintcache",
+                ".gitkeep",
+                "*.min.*",
+                "*.snap",
+                "*.pem",
+                "*lock*"
+            ],
+            "folder_exclude_patterns": [
+                "coverage",
+                ".nuxt",
+                ".output",
+                "dist",
+                "node_modules"
+            ],
+            "path": "."
+        }
+    ],
+    "build_systems": [
+        {
+            "name": "Project - Build",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run build"
+        },
+        {
+            "name": "Project - Generate",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run generate"
+        },
+        {
+            "name": "Project - Lint",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run lint"
+        },
+        {
+            "name": "Project - Open Test",
+            "working_dir": "$project_path",
+            "shell_cmd": "find tests -print | grep $file_base_name.spec | sed -n 1p | xargs subl"
+        },
+        {
+            "name": "Project - Test",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test"
+        },
+        {
+            "name": "Project - Test Snapshots",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test:snapshots"
+        },
+        {
+            "name": "Project - Test File",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test -- $file_base_name"
+        },
+        {
+            "name": "Project - Test File Snapshot",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test:snapshots -- $file_base_name"
+        }
+    ],
+    "settings": {
+        "jsdocs_return_tag": "@return",
+        "tab_size": 2,
+        "translate_tabs_to_spaces": true,
+        "lsp_format_on_save": true,
+        "lsp_code_actions_on_save": {
+            "source.organizeImports": true,
+            "source.fixAll.eslint": true
+        },
+        "LSP": {
+            "formatters": {
+                "source.ts": "LSP-biome",
+                "source.js": "LSP-biome",
+                "text.html.vue source.ts.embedded.html": "LSP-biome",
+                "text.html.basic": "LSP-biome"
+            },
+            "LSP-eslint": {
+                "enabled": false
+            },
+            "LSP-biome": {
+                "enabled": true
+            }
+        }
+    },
+    "syntax_override": {
+        "\\.env.*$": [
+            "ShellScript",
+            "Shell-Unix-Generic"
+        ],
+        "\\.*rc$": [
+            "JSON",
+            "JSON"
+        ],
+        "\\.ts.snap$": [
+            "JavaScript",
+            "TypeScript"
+        ],
+        "\\.css$": [
+            "Tailwind CSS",
+            "Tailwind CSS"
+        ],
+        "\\.vue$": [
+            "Vue Syntax Highlight",
+            "Vue Component"
+        ]
     }
-  ],
-  "build_systems": [
-    {
-      "name": "Project - Build",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run build"
-    },
-    {
-      "name": "Project - Generate",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run generate"
-    },
-    {
-      "name": "Project - Lint",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run lint"
-    },
-    {
-      "name": "Project - Open Test",
-      "working_dir": "$project_path",
-      "shell_cmd": "find tests -print | grep $file_base_name.spec | sed -n 1p | xargs subl"
-    },
-    {
-      "name": "Project - Test",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test"
-    },
-    {
-      "name": "Project - Test Snapshots",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test:snapshots"
-    },
-    {
-      "name": "Project - Test File",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test -- $file_base_name"
-    },
-    {
-      "name": "Project - Test File Snapshot",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test:snapshots -- $file_base_name"
-    }
-  ],
-  "settings": {
-		"jsdocs_return_tag": "@return",
-		"tab_size": 2,
-		"translate_tabs_to_spaces": true,
-		"lsp_format_on_save": true,
-		"lsp_code_actions_on_save": {
-			"source.organizeImports": true,
-			"source.fixAll.eslint": true
-		},
-		"LSP": {
-			"formatters": {
-				"source.ts": "LSP-biome",
-				"source.js": "LSP-biome",
-				"text.html.vue source.ts.embedded.html": "LSP-biome",
-				"text.html.basic": "LSP-biome"
-			},
-			"LSP-eslint": {
-				"enabled": false
-			},
-			"LSP-biome": {
-				"enabled": true
-			}
-		}
-	},
-	"syntax_override": {
-		"\\.env.*$": [
-			"ShellScript",
-			"Shell-Unix-Generic"
-		],
-		"\\.*rc$": [
-			"JSON",
-			"JSON"
-		],
-		"\\.ts.snap$": [
-			"JavaScript",
-			"TypeScript"
-		],
-		"\\.css$": [
-			"Tailwind CSS",
-			"Tailwind CSS"
-		],
-		"\\.vue$": [
-			"vue-syntax-highlight",
-			"Vue Component"
-		]
-	}
 }

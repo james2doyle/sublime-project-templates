@@ -1,106 +1,106 @@
 {
-  "folders": [
-    {
-      "file_exclude_patterns": [
-        ".gitkeep",
-        "*.min.*",
-        "*.ts.snap",
-        "*lock*"
-      ],
-      "folder_exclude_patterns": [
-        ".sanity",
-        ".astro",
-        ".netlify",
-        ".next",
-        ".nuxt",
-        ".vercel",
-        ".cache",
-        ".yarn",
-        "out",
-        "dist",
-        "node_modules"
-      ],
-      "path": "."
-    }
-  ],
-  "build_systems": [
-    {
-      "name": "Project - Build",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm build"
-    },
-    {
-      "name": "Project - Storybook",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm storybook"
-    },
-    {
-      "name": "Project - Test",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm test"
-    },
-    {
-      "name": "Project - Open Test",
-      "working_dir": "$project_path",
-      "shell_cmd": "find tests -print | grep $file_base_name.spec | sed -n 1p | xargs subl"
-    },
-    {
-      "name": "Project - Test Snapshots",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm test:snapshots"
-    },
-    {
-      "name": "Project - Test File",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm test $file_base_name"
-    },
-    {
-      "name": "Project - Test File Snapshot",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm test:snapshots $file_base_name"
-    },
-    {
-      "name": "Project - Format README.md",
-      "working_dir": "$project_path",
-      "shell_cmd": "mdformat $file"
-    }
-  ],
-  "settings": {
-    "match_brackets_angle": true,
-    "tab_size": 2,
-    "translate_tabs_to_spaces": true,
-    "jsdocs_return_tag": "@return",
-    "lsp_format_on_save": false,
-    "lsp_code_actions_on_save": {
-      "source.organizeImports": false,
-      "source.fixAll.eslint": true
-    },
-    "LSP": {
-      "formatters": {
-        "source.ts": "LSP-biome",
-        "source.js": "LSP-biome",
-        "source.tsx": "LSP-biome",
-        "source.jsx": "LSP-biome",
-        "text.html.basic": "LSP-biome"
-      }
-    }
-  },
-  "syntax_override": {
-    "\\.env.*$": [
-      "ShellScript",
-      "Shell-Unix-Generic"
+    "folders": [
+        {
+            "file_exclude_patterns": [
+                ".gitkeep",
+                "*.min.*",
+                "*.ts.snap",
+                "*lock*"
+            ],
+            "folder_exclude_patterns": [
+                ".sanity",
+                ".astro",
+                ".netlify",
+                ".next",
+                ".nuxt",
+                ".vercel",
+                ".cache",
+                ".yarn",
+                "out",
+                "dist",
+                "node_modules"
+            ],
+            "path": "."
+        }
     ],
-    "\\.*rc$": [
-      "JSON",
-      "JSON"
+    "build_systems": [
+        {
+            "name": "Project - Build",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm build"
+        },
+        {
+            "name": "Project - Storybook",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm storybook"
+        },
+        {
+            "name": "Project - Test",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm test"
+        },
+        {
+            "name": "Project - Open Test",
+            "working_dir": "$project_path",
+            "shell_cmd": "find tests -print | grep $file_base_name.spec | sed -n 1p | xargs subl"
+        },
+        {
+            "name": "Project - Test Snapshots",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm test:snapshots"
+        },
+        {
+            "name": "Project - Test File",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm test $file_base_name"
+        },
+        {
+            "name": "Project - Test File Snapshot",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm test:snapshots $file_base_name"
+        },
+        {
+            "name": "Project - Format README.md",
+            "working_dir": "$project_path",
+            "shell_cmd": "mdformat $file"
+        }
     ],
-    "\\.ts.snap$": [
-      "JavaScript",
-      "TypeScript"
-    ],
-    "\\.css$": [
-      "Tailwind CSS",
-      "Tailwind CSS"
-    ]
-  }
+    "settings": {
+        "match_brackets_angle": true,
+        "tab_size": 2,
+        "translate_tabs_to_spaces": true,
+        "jsdocs_return_tag": "@return",
+        "lsp_format_on_save": false,
+        "lsp_code_actions_on_save": {
+            "source.organizeImports": true,
+            "source.fixAll.eslint": true
+        },
+        "LSP": {
+            "formatters": {
+                "source.ts": "LSP-biome",
+                "source.js": "LSP-biome",
+                "source.tsx": "LSP-biome",
+                "source.jsx": "LSP-biome",
+                "text.html.basic": "LSP-biome"
+            }
+        }
+    },
+    "syntax_override": {
+        "\\.env.*$": [
+            "ShellScript",
+            "Shell-Unix-Generic"
+        ],
+        "\\.*rc$": [
+            "JSON",
+            "JSON"
+        ],
+        "\\.ts.snap$": [
+            "JavaScript",
+            "TypeScript"
+        ],
+        "\\.css$": [
+            "Tailwind CSS",
+            "Tailwind CSS"
+        ]
+    }
 }

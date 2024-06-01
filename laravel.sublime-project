@@ -71,6 +71,9 @@
                 "enabled": false,
             },
             "formatters": {
+                "source.ts": "LSP-biome",
+                "source.js": "LSP-biome",
+                "text.html.basic": "LSP-biome",
                 "embedding.php": "LSP-intelephense"
             },
         },
