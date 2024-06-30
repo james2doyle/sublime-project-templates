@@ -91,7 +91,11 @@
             "JSON",
             "JSON"
         ],
-        "\\.blade\\.php$": [
+        "livewire.*\\.blade\\.php$": [
+            "PHP",
+            "PHP"
+        ],
+        "(!?livewire.*)\\.blade\\.php$": [
             "Laravel Blade Highlighter",
             "Syntaxes",
             "HTML (Blade)"
