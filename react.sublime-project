@@ -1,96 +1,100 @@
 {
-  "folders": [
-    {
-      "file_exclude_patterns": [
-        ".gitkeep",
-        "*.min.*",
-        "*.ts.snap",
-        "*lock*"
-      ],
-      "folder_exclude_patterns": [
-        ".cache",
-        ".next",
-        "dist",
-        "node_modules"
-      ],
-      "path": "."
-    }
-  ],
-  "build_systems": [
-    {
-      "name": "Project - Build",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run build"
-    },
-    {
-      "name": "Project - Test",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test"
-    },
-    {
-      "name": "Project - Open Test",
-      "working_dir": "$project_path",
-      "shell_cmd": "find tests -print | grep $file_base_name.spec | sed -n 1p | xargs subl"
-    },
-    {
-      "name": "Project - Test Snapshots",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test:snapshots"
-    },
-    {
-      "name": "Project - Test File",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test -- $file_base_name.spec"
-    },
-    {
-      "name": "Project - Test File Snapshot",
-      "working_dir": "$project_path",
-      "shell_cmd": "npm run test:snapshots -- $file_base_name.spec"
-    }
-  ],
-  "settings": {
-    "tab_size": 2,
-    "translate_tabs_to_spaces": true,
-    "jsdocs_return_tag": "@return",
-    "lsp_format_on_save": true,
-    "lsp_code_actions_on_save": {
-      "source.organizeImports": true,
-      "source.fixAll.eslint": true
-    },
-    "LSP": {
-      "formatters": {
-        "source.ts": "LSP-biome",
-        "source.js": "LSP-biome",
-        "source.tsx": "LSP-biome",
-        "source.jsx": "LSP-biome",
-        "text.html.basic": "LSP-biome"
-      },
-      "LSP-eslint": {
-        "enabled": false
-      },
-      "LSP-biome": {
-        "enabled": true
-      }
-    }
-  },
-  "syntax_override": {
-    "\\.env.*$": ["ShellScript", "Shell-Unix-Generic"],
-    "\\.*rc$": [
-      "JSON",
-      "JSON"
+    "folders": [
+        {
+            "file_exclude_patterns": [
+                ".gitkeep",
+                "*.min.*",
+                "*.ts.snap",
+                "*.lock",
+                "*lock.json"
+            ],
+            "folder_exclude_patterns": [
+                ".cache",
+                ".next",
+                "dist",
+                "node_modules"
+            ],
+            "path": "."
+        }
     ],
-    "\\.p?css$": [
-      "Syntax Highlighting for PostCSS",
-      "Syntaxes",
-      "PostCSS"
+    "build_systems": [
+        {
+            "name": "Project - Build",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run build"
+        },
+        {
+            "name": "Project - Test",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test"
+        },
+        {
+            "name": "Project - Open Test",
+            "working_dir": "$project_path",
+            "shell_cmd": "find tests -print | grep $file_base_name.spec | sed -n 1p | xargs subl"
+        },
+        {
+            "name": "Project - Test Snapshots",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test:snapshots"
+        },
+        {
+            "name": "Project - Test File",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test -- $file_base_name.spec"
+        },
+        {
+            "name": "Project - Test File Snapshot",
+            "working_dir": "$project_path",
+            "shell_cmd": "npm run test:snapshots -- $file_base_name.spec"
+        }
     ],
-    "\\.[j|t]s$": [
-      "TypeScript Syntax",
-      "TypeScript"
-    ],
-    "\\.ts.snap$": [
-      "TypeScript Syntax",
-      "TypeScript"
-    ]
-  }
+    "settings": {
+        "tab_size": 2,
+        "translate_tabs_to_spaces": true,
+        "jsdocs_return_tag": "@return",
+        "lsp_format_on_save": true,
+        "lsp_code_actions_on_save": {
+            "source.organizeImports": true,
+            "source.fixAll.eslint": true
+        },
+        "LSP": {
+            "formatters": {
+                "source.ts": "LSP-biome",
+                "source.js": "LSP-biome",
+                "source.tsx": "LSP-biome",
+                "source.jsx": "LSP-biome",
+                "text.html.basic": "LSP-biome"
+            },
+            "LSP-eslint": {
+                "enabled": false
+            },
+            "LSP-biome": {
+                "enabled": true
+            }
+        }
+    },
+    "syntax_override": {
+        "\\.env.*$": [
+            "ShellScript",
+            "Shell-Unix-Generic"
+        ],
+        "\\.*rc$": [
+            "JSON",
+            "JSON"
+        ],
+        "\\.p?css$": [
+            "Syntax Highlighting for PostCSS",
+            "Syntaxes",
+            "PostCSS"
+        ],
+        "\\.[j|t]s$": [
+            "TypeScript Syntax",
+            "TypeScript"
+        ],
+        "\\.ts.snap$": [
+            "TypeScript Syntax",
+            "TypeScript"
+        ]
+    }
 }

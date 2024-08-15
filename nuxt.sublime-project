@@ -7,7 +7,8 @@
                 "*.min.*",
                 "*.snap",
                 "*.pem",
-                "*lock*"
+                "*.lock",
+                "*lock.json"
             ],
             "folder_exclude_patterns": [
                 "coverage",

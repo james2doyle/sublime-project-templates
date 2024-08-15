@@ -2,6 +2,17 @@
     "folders": [
         {
             "path": ".",
+            "file_exclude_patterns": [
+                ".gitkeep",
+                "*.lock",
+                "*lock.json",
+                "database/*.sqlite",
+                ".phpstorm.meta.php",
+                "_ide_helper.php",
+                "_ide_helper_models.php",
+                "programmatic-types.graphql",
+                "_lighthouse_ide_helper.php"
+            ],
             "folder_exclude_patterns": [
                 ".vemto",
                 "vendor",
@@ -11,54 +22,44 @@
                 "public/js",
                 "public/css"
             ],
-            "file_exclude_patterns": [
-                ".gitkeep",
-                "*lock*",
-                "database/*.sqlite",
-                ".phpstorm.meta.php",
-                "_ide_helper.php",
-                "_ide_helper_models.php",
-                "programmatic-types.graphql",
-                "_lighthouse_ide_helper.php"
-            ],
-            "follow_symlinks": true,
+            "follow_symlinks": true
         }
     ],
     "build_systems": [
         {
             "name": "Project - Lint",
             "working_dir": "$project_path",
-            "shell_cmd": "composer run lint",
+            "shell_cmd": "composer run lint"
         },
         {
             "name": "Project - Test",
             "working_dir": "$project_path",
-            "shell_cmd": "composer run test",
+            "shell_cmd": "composer run test"
         },
         {
             "name": "Project - Mess Detector",
             "working_dir": "$project_path",
-            "shell_cmd": "composer run md",
+            "shell_cmd": "composer run md"
         },
         {
             "name": "Project - IDE Helper",
             "working_dir": "$project_path",
-            "shell_cmd": "php artisan ide-helper:models -n",
+            "shell_cmd": "php artisan ide-helper:models -n"
         },
         {
             "name": "Project - Open Test",
             "working_dir": "$project_path",
-            "shell_cmd": "find tests -print | grep $file_base_name | sed -n 1p | xargs subl",
+            "shell_cmd": "find tests -print | grep $file_base_name | sed -n 1p | xargs subl"
         },
         {
             "name": "Project - Test File",
             "working_dir": "$project_path",
-            "shell_cmd": "php artisan test --filter $file_base_name",
+            "shell_cmd": "php artisan test --filter $file_base_name"
         },
         {
             "name": "Project - Format Blade File",
             "working_dir": "$project_path",
-            "shell_cmd": "blade-formatter --write $file",
+            "shell_cmd": "./node_modules/.bin/blade-formatter --write $file"
         }
     ],
     "settings": {
@@ -68,15 +69,27 @@
         "lsp_format_on_save": true,
         "LSP": {
             "phpactor": {
-                "enabled": false,
+                "enabled": false
+            },
+            "blade": {
+                "enabled": false
+            },
+            "LSP-html": {
+                "enabled": false
+            },
+            "LSP-eslint": {
+                "enabled": false
+            },
+            "LSP-biome": {
+                "enabled": true
             },
             "formatters": {
                 "source.ts": "LSP-biome",
                 "source.js": "LSP-biome",
                 "text.html.basic": "LSP-biome",
                 "embedding.php": "LSP-intelephense"
-            },
-        },
+            }
+        }
     },
     "syntax_override": {
         "\\.env.*$": [
@@ -103,6 +116,6 @@
         "\\.css$": [
             "Tailwind CSS",
             "Tailwind CSS"
-        ],
-    },
+        ]
+    }
 }

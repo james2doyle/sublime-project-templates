@@ -2,6 +2,11 @@
     "folders": [
         {
             "path": ".",
+            "file_exclude_patterns": [
+                ".gitkeep",
+                "*.lock",
+                "*lock.json"
+            ],
             "folder_exclude_patterns": [
                 ".dart_tool",
                 "build",
@@ -10,10 +15,6 @@
                 "linux",
                 "macos"
             ],
-            "file_exclude_patterns": [
-                ".gitkeep",
-                "*lock*"
-            ],
             "follow_symlinks": true
         }
     ],
@@ -21,22 +22,22 @@
         {
             "name": "Project - Analyze",
             "working_dir": "$project_path",
-            "cmd": ["flutter", "analyze"],
+            "cmd": ["flutter", "analyze"]
         },
         {
             "name": "Project - Get Dependencies",
             "working_dir": "$project_path",
-            "cmd": ["flutter", "pub", "get"],
+            "cmd": ["flutter", "pub", "get"]
         },
         {
             "name": "Project - Format",
             "working_dir": "$project_path",
-            "cmd": ["dart", "format", "$file"],
+            "cmd": ["dart", "format", "$file"]
         },
         {
             "name": "Project - Fix",
             "working_dir": "$project_path",
-            "cmd": ["dart", "fix", "--apply", "$file"],
+            "cmd": ["dart", "fix", "--apply", "$file"]
         },
         {
             "name": "Project - Run DevTools",
@@ -46,23 +47,23 @@
         {
             "name": "Project - Run (chrome)",
             "working_dir": "$project_path",
-            "cmd": ["flutter", "run", "--hot", "-d", "chrome"],
+            "cmd": ["flutter", "run", "--hot", "-d", "chrome"]
         },
         {
             "name": "Project - Run (android)",
             "working_dir": "$project_path",
-            "cmd": ["flutter", "run", "--hot", "-d", "android"],
+            "cmd": ["flutter", "run", "--hot", "-d", "android"]
         },
         {
             "name": "Project - Start Android",
             "working_dir": "$project_path",
-            "cmd": ["flutter", "emulators", "--launch", "Pixel_3a_API_29"],
+            "cmd": ["flutter", "emulators", "--launch", "Pixel_3a_API_29"]
         },
         {
             "name": "Project - Start iOS",
             "working_dir": "$project_path",
-            "cmd": ["flutter", "emulators", "--launch", "apple_ios_simulator"],
-        },
+            "cmd": ["flutter", "emulators", "--launch", "apple_ios_simulator"]
+        }
     ],
     "settings": {
         "tab_size": 2,
@@ -71,5 +72,5 @@
     },
     "syntax_override": {
         "\\.iml$": ["XML", "XML"]
-    },
+    }
 }
