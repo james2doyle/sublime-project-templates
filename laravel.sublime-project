@@ -6,6 +6,7 @@
                 ".gitkeep",
                 "*.lock",
                 "*lock.json",
+                "artisan",
                 "database/*.sqlite",
                 ".phpstorm.meta.php",
                 "_ide_helper.php",
