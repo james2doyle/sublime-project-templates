@@ -8,6 +8,7 @@
                 "*lock.json"
             ],
             "folder_exclude_patterns": [
+                ".idea",
                 ".dart_tool",
                 "build",
                 "web",
