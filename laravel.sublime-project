@@ -63,6 +63,12 @@
             "shell_cmd": "./node_modules/.bin/blade-formatter --write $file"
         },
         {
+            "name": "Project - Open Log",
+            "working_dir": "$project_path",
+            "shell_cmd": "subl storage/logs/laravel.log",
+            "quiet": true
+        },
+        {
             "name": "Project - Format All Blade Files",
             "working_dir": "$project_path",
             "shell_cmd": "./node_modules/.bin/blade-formatter --write \"resources/views/**/*.blade.php\""
@@ -98,15 +104,30 @@
         }
     },
     "syntax_override": {
-        "\\.env.*$": ["ShellScript", "Shell-Unix-Generic"],
-        "\\.inc$": ["PHP", "PHP"],
-        "\\.*rc$": ["JSON", "JSON"],
-        "livewire.*\\.blade\\.php$": ["PHP", "PHP"],
+        "\\.env.*$": [
+            "ShellScript",
+            "Shell-Unix-Generic"
+        ],
+        "\\.inc$": [
+            "PHP",
+            "PHP"
+        ],
+        "\\.*rc$": [
+            "JSON",
+            "JSON"
+        ],
+        "livewire.*\\.blade\\.php$": [
+            "PHP",
+            "PHP"
+        ],
         "(!?livewire.*)\\.blade\\.php$": [
             "Laravel Blade Highlighter",
             "Syntaxes",
             "HTML (Blade)"
         ],
-        "\\.css$": ["Tailwind CSS", "Tailwind CSS"]
+        "\\.css$": [
+            "Tailwind CSS",
+            "Tailwind CSS"
+        ]
     }
 }
