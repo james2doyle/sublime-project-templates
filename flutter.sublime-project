@@ -10,6 +10,7 @@
             "folder_exclude_patterns": [
                 ".idea",
                 ".dart_tool",
+                ".gradle",
                 "build",
                 "web",
                 "windows",
