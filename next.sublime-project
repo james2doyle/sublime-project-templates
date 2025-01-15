@@ -17,7 +17,8 @@
                 ".cache",
                 "out",
                 "dist",
-                "node_modules"
+                "node_modules",
+                "test/__snapshots__/"
             ],
             "path": "."
         }
