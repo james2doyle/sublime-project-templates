@@ -63,15 +63,45 @@
 			"shell_cmd": "./node_modules/.bin/blade-formatter --write $file"
 		},
 		{
-			"name": "Project - Open Log",
-			"working_dir": "$project_path",
-			"shell_cmd": "subl storage/logs/laravel.log",
-			"quiet": true
-		},
-		{
 			"name": "Project - Format All Blade Files",
 			"working_dir": "$project_path",
 			"shell_cmd": "./node_modules/.bin/blade-formatter --write \"resources/views/**/*.blade.php\""
+		},
+		{
+			"name": "Project - Open Log",
+			"working_dir": "$project_path",
+			"shell_cmd": "subl storage/logs/*.log",
+			"quiet": true
+		},
+		{
+			"name": "Project - Clear Logs",
+			"working_dir": "$project_path",
+			"shell_cmd": "composer run clear-logs",
+			"quiet": true
+		},
+		{
+			"name": "Project - Mago fmt",
+			"working_dir": "$project_path",
+			"shell_cmd": "mago fmt $file",
+			"quiet": true
+		},
+		{
+			"name": "Project - Mago lint",
+			"working_dir": "$project_path",
+			"shell_cmd": "mago lint $file",
+			"quiet": true
+		},
+		{
+			"name": "Project - Run in Artisan",
+			"working_dir": "$project_path",
+			"target": "exec_selection",
+			"cancel": { "kill": true },
+			"shell_cmd": "php artisan tinker --execute \"print_r(SELECTION)\""
+		},
+		{
+			"name": "Project - Sort CSS Classes",
+			"working_dir": "$project_path",
+			"shell_cmd": "rustywind --write $file"
 		}
 	],
 	"settings": {
