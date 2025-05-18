@@ -83,8 +83,8 @@
 	"syntax_override": {
 		"\\.env.*$": ["ShellScript", "Shell-Unix-Generic"],
 		"\\.*rc$": ["JSON", "JSON"],
+		// "\\.css$": ["Tailwind CSS", "Tailwind CSS"],
 		"\\.p?css$": ["Syntax Highlighting for PostCSS", "Syntaxes", "PostCSS"],
-		"\\.[j|t]s$": ["TypeScript Syntax", "TypeScript"],
-		"\\.ts.snap$": ["TypeScript Syntax", "TypeScript"]
+		"\\.ts.snap$": ["JavaScript", "TypeScript"]
 	}
 }
