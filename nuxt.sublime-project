@@ -96,6 +96,6 @@
 		"\\.*rc$": ["JSON", "JSON"],
 		"\\.ts.snap$": ["JavaScript", "TypeScript"],
 		"\\.css$": ["Tailwind CSS", "Tailwind CSS"],
-		"\\.vue$": ["Vue Syntax Highlight", "Vue Component"]
+		"\\.vue$": ["Vue", "Vue Component"]
 	}
 }
