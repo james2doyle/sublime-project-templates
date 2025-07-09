@@ -70,7 +70,13 @@
     "settings": {
         "tab_size": 2,
         "translate_tabs_to_spaces": true,
-        "jsdocs_return_tag": "@return"
+        "jsdocs_return_tag": "@return",
+        "lsp_format_on_save": true,
+        "LSP": {
+            "formatters": {
+                "source.dart": "Dart"
+            }
+        }
     },
     "syntax_override": {
         "\\.iml$": ["XML", "XML"]
