@@ -1,0 +1,159 @@
+{
+	"folders": [
+		{
+			"file_exclude_patterns": [
+				".aider.*",
+				".gitkeep",
+				"*.min.*",
+				"*.pixi",
+				"*.snap",
+				"*lock*"
+			],
+			"folder_exclude_patterns": [
+				".aider",
+				".aider.*",
+				".opencode",
+				".internal",
+				".crush",
+				".cache",
+				"build"
+			],
+			"path": "."
+		}
+	],
+	"build_systems": [
+		{
+			"name": "Project - Build",
+			"working_dir": "$project_path",
+			"shell_cmd": "echo 0"
+		},
+		{
+			"name": "Project - Test",
+			"working_dir": "$project_path",
+			"shell_cmd": "echo 0"
+		},
+		{
+			"name": "Project - Format",
+			"working_dir": "$project_path",
+			"shell_cmd": "stylua ."
+		},
+		{
+			"name": "Project - Format File",
+			"working_dir": "$project_path",
+			"shell_cmd": "stylua $file"
+		},
+		{
+			"name": "Project - Lint",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene ."
+		},
+		{
+			"name": "Project - Lint File",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene $file"
+		},
+		{
+			"name": "Project - Lint And Format File",
+			"working_dir": "$project_path",
+			"shell_cmd": "stylua $file && selene $file"
+		}
+	],
+	"settings": {
+		"tab_size": 2,
+		"translate_tabs_to_spaces": false,
+		"build_on_save": {
+			"enabled": false,
+			"build_system_map": {
+				"rbxlua": "Project - Lint And Format File"
+			}
+		},
+		"defold_hot_reload": true,
+		"lsp_format_on_save": true,
+		"lsp_code_actions_on_save": {
+			"source.organizeImports": true,
+			"source.fixAll": true
+		},
+		"LSP": {
+			"LSP-lua": {
+				"settings": {
+					"editor.snippetSuggestions": "bottom",
+					"Lua.runtime.version": "Lua 5.1",
+					"Lua.diagnostics.ignoredFiles": "Disable",
+					"Lua.diagnostics.libraryFiles": "Disable",
+					"Lua.completion.callSnippet": "Replace",
+					"Lua.workspace.library": [
+						"../defold_api",
+						".internal/lua-annotations/builtins"
+					],
+					"Lua.workspace.ignoreDir": [
+						"../defold_api",
+						".internal/lua-annotations/builtins"
+					],
+					"Lua.diagnostics.globals": [
+						"init",
+						"final",
+						"update",
+						"fixed_update",
+						"on_message",
+						"on_input",
+						"on_reload"
+					],
+					"search.exclude": {
+						"../defold_api/**": true,
+						".internal/lua-annotations/builtins/**": true,
+						"**/build/**": true,
+						"patches/": true,
+						"**/*.collection": true,
+						"**/*.atlas": true,
+						"**/icon_*.png": true
+					},
+					"files.associations": {
+						"*.script": "lua",
+						"*.gui_script": "lua",
+						"*.render_script": "lua",
+						"*.editor_script": "lua",
+						"*.lua_": "lua",
+						"*.fp": "glsl",
+						"*.vp": "glsl",
+						"*.go": "textproto",
+						"*.animationset": "textproto",
+						"*.atlas": "textproto",
+						"*.buffer": "json",
+						"*.camera": "textproto",
+						"*.collection": "textproto",
+						"*.collectionfactory": "textproto",
+						"*.collectionproxy": "textproto",
+						"*.collisionobject": "textproto",
+						"*.display_profiles": "textproto",
+						"*.factory": "textproto",
+						"*.gamepads": "textproto",
+						"*.gui": "textproto",
+						"*.input_binding": "textproto",
+						"*.label": "textproto",
+						"*.material": "textproto",
+						"*.mesh": "textproto",
+						"*.model": "textproto",
+						"*.particlefx": "textproto",
+						"*.project": "ini",
+						"*.render": "textproto",
+						"*.sound": "textproto",
+						"*.spinemodel": "textproto",
+						"*.spinescene": "textproto",
+						"*.sprite": "textproto",
+						"*.texture_profiles": "textproto",
+						"*.tilemap": "textproto",
+						"*.tilesource": "textproto"
+					}
+				}
+			}
+		}
+	},
+	"syntax_override": {
+		"\\.lua$": ["Lua", "Lua"],
+		"\\.script$": ["Lua", "Lua"],
+		"\\.gui_script$": ["Lua", "Lua"],
+		"\\.render_script$": ["Lua", "Lua"],
+		"\\.editor_script$": ["Lua", "Lua"],
+		"\\.fp$": ["OpenGL Shading Language (GLSL)", "GLSL"]
+	}
+}

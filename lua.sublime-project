@@ -1,0 +1,61 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"build_systems": [
+		{
+			"name": "Project - Lint",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene ."
+		},
+		{
+			"name": "Project - Format",
+			"working_dir": "$project_path",
+			"shell_cmd": "stylua ."
+		},
+		{
+			"name": "Project - Lint File",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene $file"
+		},
+		{
+			"name": "Project - Format File",
+			"working_dir": "$project_path",
+			"shell_cmd": "stylua $file"
+		},
+		{
+			"name": "Project - Format And Lint File",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene $file && stylua $file"
+		}
+	],
+	"settings": {
+		"build_on_save": {
+			"enabled": true,
+			"build_system_map": {
+				"rbxlua": "Project - Format And Lint File"
+			}
+		},
+		"lsp_format_on_save": true,
+		"lsp_code_actions_on_save": {
+			"source.organizeImports": true,
+			"source.fixAll": true
+		},
+		"LSP": {
+			"LSP-lua": {
+				"settings": {
+					"Lua.runtime.version": "LuaJIT",
+					"Lua.runtime.special": {
+						"jit": "jit"
+					},
+					"Lua.diagnostics.enable": true
+				}
+			},
+			"formatters": {
+				"source.json": "LSP-json"
+			}
+		}
+	}
+}

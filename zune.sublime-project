@@ -1,0 +1,58 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"build_systems": [
+		{
+			"name": "Project - Run",
+			"working_dir": "$project_path",
+			"shell_cmd": "zune run $file"
+		},
+		{
+			"name": "Project - Test",
+			"working_dir": "$project_path",
+			"shell_cmd": "zune test $file"
+		},
+		{
+			"name": "Project - Debug",
+			"working_dir": "$project_path",
+			"shell_cmd": "zune debug $file"
+		}
+	],
+	"settings": {
+		"LSP":
+		{
+			"luau-lsp": {
+				"enabled": true,
+				"selector": "source.luau, source.rbxlua",
+				"command": [
+					"/usr/local/bin/luau-lsp",
+					"lsp",
+					"--definitions=$home/.zune/typedefs/global/zune.d.luau",
+					"--documentation=$home/.zune/typedefs/global/zune.d.json"
+				],
+				"initializationOptions": {
+					"changeConfiguration": true
+				}
+			},
+			"formatters":
+			{
+				"source.json": "LSP-json"
+			},
+			"LSP-lua":
+			{
+				"enabled": false,
+				"settings":
+				{
+					"Lua.diagnostics.globals":
+					[
+						"zune"
+					]
+				}
+			}
+		}
+		},
+	"\\.luau$": ["LuauSublime", "Luau"]
+}
