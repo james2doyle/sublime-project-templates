@@ -23,6 +23,21 @@
 			"name": "Project - Lint",
 			"working_dir": "$project_path",
 			"cmd": ["selene", "."],
+		},
+		{
+			"name": "Project - Lint File",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene $file"
+		},
+		{
+			"name": "Project - Format File",
+			"working_dir": "$project_path",
+			"shell_cmd": "stylua $file"
+		},
+		{
+			"name": "Project - Format And Lint File",
+			"working_dir": "$project_path",
+			"shell_cmd": "selene $file && stylua $file"
 		}
 	],
 	"settings":
