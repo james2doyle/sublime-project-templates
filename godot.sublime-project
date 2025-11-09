@@ -1,0 +1,88 @@
+{
+	"folders": [
+		{
+			"folder_exclude_patterns": [
+				".godot"
+			],
+			"file_exclude_patterns": [
+				"*-crash*",
+				"*.uid",
+				"*.import"
+			],
+			"path": "."
+		}
+	],
+	"build_systems": [
+		{
+			"name": "Project - Lint",
+			"working_dir": "$project_path",
+			"shell_cmd": "gdscript-formatter lint ."
+		},
+		{
+			"name": "Project - Lint File",
+			"working_dir": "$project_path",
+			"shell_cmd": "gdscript-formatter lint $file"
+		},
+		{
+			"name": "Project - Format",
+			"working_dir": "$project_path",
+			"shell_cmd": "gdscript-formatter --reorder-code ."
+		},
+		{
+			"name": "Project - Format File",
+			"working_dir": "$project_path",
+			"shell_cmd": "gdscript-formatter --reorder-code $file"
+		},
+		{
+			"name": "Project - Lint and Format",
+			"working_dir": "$project_path",
+			"shell_cmd": "gdscript-formatter lint $file && gdscript-formatter --reorder-code $file"
+		}
+	],
+	"settings": {
+		"build_on_save": {
+			"enabled": true,
+			"show_panel_on_build": false,
+			"build_system_map": {
+				"GDScript": "Project - Lint and Format"
+			}
+		},
+		"lsp_format_on_save": true,
+		"lsp_code_actions_on_save": {
+			"source.organizeImports": true,
+			"source.fixAll": true
+		},
+		"LSP": {
+			"LSP-godot": {
+				"enabled": true,
+				"command": [
+					"ncat",
+					"127.0.0.1",
+					"6005"
+				],
+				"selector": "source.gdscript"
+			},
+			"formatters": {
+				"source.json": "LSP-json"
+			}
+		}
+	},
+	"syntax_override": {
+		"\\.gd$": [
+			"GDScript-sublime",
+			"GDScript"
+		],
+		"\\.tres$": [
+			"GDScript-sublime",
+			"GDResource"
+		],
+		"\\.tscn$": [
+			"GDScript-sublime",
+			"GDResource"
+		],
+		"\\.godot$": [
+			"GDScript-sublime",
+			"GDResource"
+		]
+	}
+}
